@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SignalRDemoChat.Domain\SignalRDemoChat.Domain.csproj" />
+    <ProjectReference Include="..\SignalRDemoChat.Infrastructure\SignalRDemoChat.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+**/node_modules
+**/bin
+**/obj
+**/.vscode
+**/.vs
+**/.angular
+**/package-lock.json
+**/*.db
+**/LocalData.db-shm
+**/LocalData.db-wal

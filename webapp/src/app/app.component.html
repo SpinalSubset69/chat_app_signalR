@@ -1,0 +1,33 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">App Chat for test SignalR</p>
+    <p class="subtitle">by me luis :P</p>
+  </div>
+</section>
+
+<div class="container is-max-desktop mt-5">
+  <div class="columns">
+    <div class="column is-one-fifths is-align-content-center">
+      <h3 class="title is-5">Room Name:</h3>
+    </div>
+
+    <div class="column is-four-fifths">
+      <form [formGroup]="roomCreateForm">
+        <input
+          formControlName="roomName"
+          class="input is-primary"
+          type="text"
+          placeholder="Room Name"
+        />
+      </form>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column is-full is-align-items-self-end">
+      <button (click)="createRoom()" class="button is-primary">Create Room</button>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
