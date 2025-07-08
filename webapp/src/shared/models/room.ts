@@ -1,5 +1,6 @@
 export interface Room {
-  id: number;
+  id: string;
   roomName: string;
-  connectionId: string;
+  connectionId?: string;
+  totalUsers: number;
 }

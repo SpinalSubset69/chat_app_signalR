@@ -1,0 +1,33 @@
+<nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+  <a (click)="pageChanged(actualPage - 1)" class="pagination-previous">Previous</a>
+  <a (click)="pageChanged(actualPage + 1)" class="pagination-next">Next page</a>
+
+  <ul class="pagination-list">
+    <li *ngIf="actualPage > 2">
+      <a (click)="pageChanged(1)" class="pagination-link">1</a>
+    </li>
+    <li *ngIf="actualPage > 2">
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+
+    <li *ngFor="let paginationButton of paginationButtons">
+      <a
+        [ngClass]="{ 'is-current': paginationButton.isAcutalPage }"
+        (click)="pageChanged(paginationButton.pageNumber)"
+        class="pagination-link is-primary"
+        aria-label="Page 46"
+        aria-current="page"
+        >{{ paginationButton.pageNumber }}</a
+      >
+    </li>
+
+    <li *ngIf="totalPages - 1 > actualPage">
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+    <li *ngIf="totalPages - 1 > actualPage">
+      <a (click)="pageChanged(totalPages)" class="pagination-link">{{
+        totalPages
+      }}</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,13 @@
+<div class="mt-5">
+  <p class="title is-2">Available Rooms</p>
+</div>
+
+<div class="grid is-row-gap-1.5 mt-5">
+  <div class="cell" *ngFor="let room of rooms">
+    <room-card [room]="room" />
+  </div>
+</div>
+
+<div class="mt-5">
+  <app-pagination [totalPages]="80" [actualPage]="5"/>
+</div>

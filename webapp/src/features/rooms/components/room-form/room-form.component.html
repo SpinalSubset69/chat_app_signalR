@@ -1,0 +1,31 @@
+<div class="columns">
+  <div class="column is-four-fifths">
+    <p class="title is-3 is-primary">Create a new Room!</p>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column  is-align-content-center">
+    <h3 class="is-size-4">Room Name:</h3>
+  </div>
+
+  <div class="column is-four-fifths">
+    <form [formGroup]="roomCreateForm">
+      <input
+        formControlName="roomName"
+        class="input is-primary"
+        type="text"
+        placeholder="Room Name"
+        autocomplete="off"
+      />
+    </form>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column is-full is-align-items-self-end">
+    <button (click)="createRoom()" class="button is-primary">
+      Create Room
+    </button>
+  </div>
+</div>

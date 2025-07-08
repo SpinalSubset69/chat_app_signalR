@@ -7,9 +7,10 @@ public class RoomDto
     public long Id { get; set; }
     public string ConnectionId { get; set; }
     public string RoomName { get; set; }
+    public int TotalUsers { get; set; }
 
     public static explicit operator RoomDto(Room room)
     {
-        return new() { ConnectionId = room.ConnectionId, Id = room.Id, RoomName = room.RoomName };
+        return new() { ConnectionId = room.ConnectionId, Id = room.Id, RoomName = room.RoomName, TotalUsers = room.Users.Count };
     }
 }

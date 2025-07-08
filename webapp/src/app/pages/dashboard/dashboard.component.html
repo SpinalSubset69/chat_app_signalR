@@ -1,0 +1,9 @@
+<!-- User registration -->
+<user-form *ngIf="!(user$ | async)?.id" />
+
+<!-- Chat Rooms Creation -->
+
+<room-form />
+
+<!-- Chat Rooms List -->
+<room-card-list />

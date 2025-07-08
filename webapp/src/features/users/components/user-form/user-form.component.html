@@ -1,0 +1,31 @@
+<div class="columns">
+  <div class="column">
+    <p class="title is-3 is-primary">Set UserName</p>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <p class="is-size-4">UserName:</p>
+  </div>
+
+  <div class="column is-four-fifths">
+    <form [formGroup]="formGroup">
+      <input
+        class="input is-primary"
+        type="text"
+        placeholder="UserName"
+        autocomplete="off"
+        formControlName="userName"
+      />
+    </form>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column is-full is-align-items-self-end">
+    <button (click)="onCreateUser()" class="button is-primary">
+      Set Username
+    </button>
+  </div>
+</div>

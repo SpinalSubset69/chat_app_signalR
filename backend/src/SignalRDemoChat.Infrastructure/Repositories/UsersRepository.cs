@@ -14,11 +14,12 @@ public class UsersRepository : IUsersRepository
         _appDbContext = appDbContext;
     }
 
-    public async Task CreateUserAsync(string userName)
+    public async Task CreateUserAsync(string userName, string password)
     {
         User user = new User();
 
         user.UserName = userName;
+        user.Password = password;
 
         _appDbContext.Users.Add(user);  
 

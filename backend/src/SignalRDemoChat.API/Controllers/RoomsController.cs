@@ -39,5 +39,29 @@ namespace SignalRDemoChat.API.Controllers
                 });
             }
         }
+
+        [HttpGet]
+        public async Task<ActionResult<ApiResponse>> GetRooms([FromQuery] GetRoomsRequest request)
+        {
+            try
+            {
+                var response = await _sender.Send(request);
+
+                return Ok(new ApiResponse()
+                {
+                    IsSuccess = true,
+                    Data = response,
+                    Message = "Room Created succesfully"
+                });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new ApiResponse()
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                });
+            }
+        }
     }
 }

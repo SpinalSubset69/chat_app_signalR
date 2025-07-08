@@ -44,4 +44,18 @@ public class RoomsRepository : IRoomsRepository
     {
         return await _appDbContext.Rooms.AnyAsync(x => x.ConnectionId == connectionId);
     }
+
+    public async Task<IEnumerable<Room>> GetRoomsAsync(int take, int skip)
+    {
+        return await _appDbContext.Rooms
+            .Include(x => x.Users)
+            .Take(take)
+            .Skip(skip)
+            .ToListAsync();
+    }
+
+    public async Task<int> GetTotalRoomsAsync()
+    {
+        return await _appDbContext.Rooms.CountAsync();
+    }
 }

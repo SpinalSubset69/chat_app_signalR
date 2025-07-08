@@ -1,0 +1,9 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">App Chat for test SignalR</p>
+
+    <p *ngIf="(user$ | async)?.id" class="subtitle">
+      Hello {{ (user$ | async)?.userName }}
+    </p>
+  </div>
+</section>

@@ -4,6 +4,7 @@ using SignalRDemoChat.Domain.Entities;
 using SignalRDemoChat.Domain.Exceptions;
 using SignalRDemoChat.Domain.Models;
 using SignalRDemoChat.Domain.Requests;
+using BCrypt.Net;
 
 namespace SignalRDemoChat.Application.CommandHandlers;
 
@@ -20,7 +21,11 @@ internal class CreateUserCommandHandler : IRequestHandler<CreateUserRequest, Api
     {
         var userNameExists = await _appUnitOfWork.Users.UserNameExistsAsync(request.userName);
         if (userNameExists) throw new EntityAlreadyExists(nameof(User));
-        await _appUnitOfWork.Users.CreateUserAsync(request.userName);
+
+        // Encrypt password
+        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.password);
+
+        await _appUnitOfWork.Users.CreateUserAsync(request.userName, hashedPassword);
 
         return new()
         {
